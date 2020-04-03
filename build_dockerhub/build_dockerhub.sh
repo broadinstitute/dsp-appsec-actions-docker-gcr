@@ -12,7 +12,7 @@ docker build -t $IMAGE:$TAG .
 if [ $LATEST = true ]; then
   docker tag $IMAGE:$TAG $IMAGE:latest
 else 
-  docker tag $IMAGE:$TAG $DOCKERHUB_USERNAME/$IMAGE:$TAG
+  docker tag $IMAGE:$TAG $IMAGE:$TAG
 fi
 
 if [ "$DEFAULT_BRANCH_TAG" = "true" ]; then
