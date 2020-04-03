@@ -14,7 +14,7 @@ else
 fi
 
 if [ $LATEST = true ]; then
-  docker push broadinstitute/$IMAGE:latest
+  docker push $IMAGE:latest
 else
-  docker push broadinstitute/$IMAGE:$TAG
+  docker push $IMAGE:$TAG
 fi
