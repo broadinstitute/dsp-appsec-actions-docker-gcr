@@ -14,7 +14,7 @@ else
 fi
 
 if [ $LATEST = true ]; then
-  docker push $DOCKERHUB_USERNAME/$IMAGE:latest
+  docker push $IMAGE:latest
 else
-  docker push $DOCKERHUB_USERNAME/$IMAGE:$TAG
+  docker push $IMAGE:$TAG
 fi
