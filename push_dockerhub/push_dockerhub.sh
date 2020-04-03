@@ -8,7 +8,7 @@ set -euo pipefail
 : ${LATEST:=true}
 
 if [ -n "${DOCKERHUB_USERNAME}" ]; then
-  docker login -u=${DOCKERHUB_USERNAME} -p=${DOCKERHUB_PASSWORD}}
+  docker login -u=${DOCKERHUB_USERNAME} -p=${DOCKERHUB_PASSWORD}
 else
   echo "DOCKERHUB_USERNAME was empty, not performing auth, please set a secret in your repo" 1>&2
 fi
