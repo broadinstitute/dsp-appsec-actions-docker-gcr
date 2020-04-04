@@ -51,11 +51,6 @@ To build an image and push to DockerHub please make sure to create two secrets i
           IMAGE: example-app
           DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
 
-      - name: Scan Image
-        uses: docker://aquasec/trivy
-        with:
-          args: --exit-code 1 --severity CRITICAL,HIGH --no-progress ${{secrets.DOCKERHUB_USERNAME}}/example-app
-
       - name: Docker Push to Dockerhub
         uses: broadinstitute/dsp-appsec-actions-docker-gcr/push_dockerhub@master
         env:
@@ -63,3 +58,4 @@ To build an image and push to DockerHub please make sure to create two secrets i
           DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
           DOCKERHUB_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
 ```
+
